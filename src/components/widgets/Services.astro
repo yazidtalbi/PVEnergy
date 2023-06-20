@@ -1,0 +1,216 @@
+---
+import { Icon } from 'astro-icon';
+
+const names = ['Jaarlijks verbruik?', 'Tot 35 jaar garantie', 'Uw huis stijgt in waarde', 'Subsidies door de overheid', 'Korte terugverdientijd', 'Met een thuisbatterij verbruik je ook gratis stroom als het donker is', 'Zonne-energie = geen CO2 uitstoot','Met een laadpaal zijn de hoge brandstofprijzen verleden tijd','Verkoop uw overschot aan stroom en verdien geld'];
+const services = [{title:"Zonnepanelen",image:"../src/assets/images/service1.jpg",text:" Zonnepanelen  die uw verbruik maximaal dekken (top merken met keuze uit verschillende wattages en tientallen jaren garantie)"},
+{title:"Omvormer ",image:"../src/assets/images/service2.jpg",text:"Een passende omvormer die de zonne-energie omzet in bruikbare electriciteit"},
+{title:"Thuisbatterij",image:"../src/assets/images/service3.jpg",text:"Als zou blijken dat u 's avonds een hoog verbruik hebt, dan kunnen wij ook een thuisbatterij voorstellen"},
+{title:"Laadpalen’ ",image:"../src/assets/images/service4.jpg",text:"Met een eigen laadpaal bent u verzekerd van een volle accu als je de weg op gaat en met de zonnepanelen op uw dak kan dit vrijwel gratis gebeuren! "},]
+---
+
+<section class="py-8">
+  <div class="max-w-screen-xl px-4  sm:px-6 sm:py-12 lg:px-8   backdrop-blur-md bg-white/30 "><div class="text-left">     <p class="text-sm   uppercase tracking-widest  text-lime-500 mb-1 font-bold">SERVICES</p>
+        <h2 class="text-3xl font-bold sm:text-4xl mb-8">What do we do?</h2></div>
+    <div class="block lg:flex xs:block gap-y-8 lg:grid-cols-2 lg:items-center lg:gap-x-16">
+     <div> <div class="mx-auto   text-center lg:mx-0 ltr:lg:text-left rtl:lg:text-right  ">
+     
+
+        <p class="mt-4 text-gray-600">
+          PVENERGY werkt enkel met Tier 1 materialen, d.w.z. dat uw installatie van de hoogste kwaliteit zal zijn. Daarbovenop zijn wij altijd beschikbaar voor de nodige dienst na verkoop.
+        </p>
+
+        <ol class="mt-10">
+          <li class="no-flex">
+            <!-- Works but it's not using the variable -->
+            {
+              names.map((name) => (
+                <div class="flex items-center  lg:text-lg my-4">
+                  {' '}
+                  <>
+                  <div class=" mr-4"> <Icon name="ic:sharp-check-box" class=" inline-bloc  text-lime-500 w-7" /></div> 
+                    <span class="font-bold">{name}</span>
+                  </>
+                </div>
+              ))
+            }
+          </li>
+        </ol>
+      </div>
+   
+    <div class="  w-full lg:flex mt-10">
+      
+  <div class="h-20 lg:h-auto lg:w-20 flex-none bg-cover  bg-center rounded-t lg:rounded-t-none lg:rounded-l text-left overflow-hidden" style="background-image: url('../src/assets/images/servicewebapp.jpg')" title="Woman holding a mug">
+  </div>
+  <div class="relative border-r border-b border-l border-grey-light lg:border-l-0 lg:border-t lg:border-grey-light bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+   
+    <div class=" ">
+         <Icon name="ic:baseline-plus" class="  text-lime-500 w-16 mr-5 absolute  top-0 right-0 -mt-5" />
+      <p class="text-sm text-grey-dark flex  items-center">
+        
+        <Icon name="mdi:user-check" class=" inline-bloc  text-lime-500 w-7 mr-2" />
+       <span class="text-lime-600">Gratis voordeel van de klant</span> 
+      </p><div class="text-left">  
+      <p class="text-grey-darker text-base text-sm"><span class="text-black font-bold text-lg">Digitale sturing </span>(bijv. app op uw smartphone) en ondersteuning bij foutmeldingen</p></div>
+    
+    </div>
+ 
+  </div>
+</div></div>
+
+      
+
+      <div>
+      
+<div class="grid grid-cols-2 md:grid-cols-2 gap-4 ">
+    {services.map((service) => (
+    <div>      
+         <a href="#" class="group relative block bg-black min-h-full  ">
+          <img
+            alt={service.title}
+           src={service.image}  class="absolute inset-0 w-full object-cover opacity-75 transition-opacity group-hover:opacity-50  h-full "
+          />
+
+          <div class="relative p-4 sm:p-6 lg:p-8">
+            <p class="text-sm font-bold uppercase tracking-widest text-lime-400">PV ENERGY</p>
+
+            <p class="text-xl font-bold text-white sm:text-2xl">{service.title}</p>
+
+            <div class="mt-36 ">
+              <div
+                class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"
+              >
+                <p class="text-md text-white text-left font-bold">
+                 {service.text}
+          
+                </p>
+              </div>
+            </div>
+          </div>
+        </a>
+    </div>  ))
+            }
+   
+ 
+</div>
+
+<!-- component -->
+
+
+</div>
+
+        
+      
+<!-- 
+      <div class="grid grid-cols-2 gap-4 sm:grid-cols-2 auto-cols-max w-3/5">
+ 
+        
+ 
+ 
+
+          <a href="#" class="group relative block bg-black ">
+          <img
+            alt="Developer"
+           src="../src/assets/images/service1.jpg"   class="absolute inset-0  w-full object-cover opacity-75 transition-opacity group-hover:opacity-50 "
+          />
+
+          <div class="relative p-4 sm:p-6 lg:p-8">
+            <p class="text-sm font-medium uppercase tracking-widest text-lime-400">PV ENERGY</p>
+
+            <p class="text-xl font-bold text-white sm:text-2xl">Solar Panels</p>
+
+            <div class="mt-32 sm:mt-48 lg:mt-64">
+              <div
+                class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"
+              >
+                <p class="text-md text-white text-left font-bold">
+                  <span class="text-lime-400">Zonnepanelen</span> die uw verbruik maximaal dekken (top merken met keuze uit verschillende wattages en tientallen jaren garantie)
+          
+                </p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        
+          <a href="#" class="group relative block bg-black ">
+          <img
+            alt="Developer"
+            src="../src/assets/images/service1.jpg"
+            class="absolute    w-full object-cover opacity-75 transition-opacity group-hover:opacity-50 "
+          />
+
+          <div class="relative p-4 sm:p-6 lg:p-8">
+            <p class="text-sm font-medium uppercase tracking-widest text-lime-400">PV ENERGY</p>
+
+            <p class="text-xl font-bold text-white sm:text-2xl">Solar Panels</p>
+
+            <div class="mt-32 sm:mt-48 lg:mt-64">
+              <div
+                class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"
+              >
+                <p class="text-sm text-white">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis perferendis hic asperiores quibusdam
+                  quidem voluptates doloremque reiciendis nostrum harum. Repudiandae?
+                </p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+
+
+          <a href="#" class="group relative block bg-black ">
+          <img
+            alt="Developer"
+            src="https://images.unsplash.com/photo-1521618755572-156ae0cdd74d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c29sYXIlMjBwYW5lbHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80"
+            class="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50 "
+          />
+
+          <div class="relative p-4 sm:p-6 lg:p-8">
+            <p class="text-sm font-medium uppercase tracking-widest text-lime-400">PV ENERGY</p>
+
+            <p class="text-xl font-bold text-white sm:text-2xl">Solar Panels</p>
+
+            <div class="mt-32 sm:mt-48 lg:mt-64">
+              <div
+                class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"
+              >
+                <p class="text-sm text-white">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis perferendis hic asperiores quibusdam
+                  quidem voluptates doloremque reiciendis nostrum harum. Repudiandae?
+                </p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+
+          <a href="#" class="group relative block bg-black ">
+          <img
+            alt="Developer"
+            src="https://images.unsplash.com/photo-1521618755572-156ae0cdd74d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c29sYXIlMjBwYW5lbHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80"
+            class="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50 "
+          />
+
+          <div class="relative p-4 sm:p-6 lg:p-8">
+            <p class="text-sm font-medium uppercase tracking-widest text-lime-400">PV ENERGY</p>
+
+            <p class="text-xl font-bold text-white sm:text-2xl">Solar Panels</p>
+
+            <div class="mt-32 sm:mt-48 lg:mt-64">
+              <div
+                class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"
+              >
+                <p class="text-sm text-white">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis perferendis hic asperiores quibusdam
+                  quidem voluptates doloremque reiciendis nostrum harum. Repudiandae?
+                </p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+      </div> -->
+    </div>
+  </div>
+</section>

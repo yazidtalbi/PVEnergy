@@ -1,0 +1,193 @@
+<style>.masonry-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: flex-end;
+}
+.masonry-container .item {
+  flex-grow: 1;
+  margin: auto;
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+.masonry-container .item:after {
+  content: " ";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 10px solid #fff;
+  z-index: 2;
+}
+.masonry-container .item.small {
+  width: 25%;
+}
+.masonry-container .item.medium {
+  width: 40%;
+}
+.masonry-container .item.large {
+  width: 60%;
+}
+.masonry-container .item.small2 {
+  width: 35%;
+}
+.masonry-container .item.medium2 {
+  width: 45%;
+}
+.masonry-container .item img {
+  min-height: 100%;
+  min-width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+#container { margin: 0%; z-index:10 }
+
+#circle {  width: 100%;  }
+
+#circle text { font-family: 'Helvetica Neue', Arial; font-size: 16px; font-weight: bold; }
+
+#circle svg {   
+
+  -webkit-animation-name: rotate;
+     -moz-animation-name: rotate;
+      -ms-animation-name: rotate;
+       -o-animation-name: rotate;
+          animation-name: rotate;
+  -webkit-animation-duration: 15s;
+     -moz-animation-duration: 15s;
+      -ms-animation-duration: 15s;
+       -o-animation-duration: 15s;
+          animation-duration: 15s;
+  -webkit-animation-iteration-count: infinite;
+     -moz-animation-iteration-count: infinite;
+      -ms-animation-iteration-count: infinite;
+       -o-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+     -moz-animation-timing-function: linear;
+      -ms-animation-timing-function: linear;
+       -o-animation-timing-function: linear;
+          animation-timing-function: linear;
+
+}
+
+@-webkit-keyframes rotate {
+    from { -webkit-transform: rotate(360deg); }
+    to { -webkit-transform: rotate(0); }
+}
+@-moz-keyframes rotate {
+    from { -moz-transform: rotate(360deg); }
+    to { -moz-transform: rotate(0); }
+}
+@-ms-keyframes rotate {
+    from { -ms-transform: rotate(360deg); }
+    to { -ms-transform: rotate(0); }
+}
+@-o-keyframes rotate {
+    from { -o-transform: rotate(360deg); }
+    to { -o-transform: rotate(0); }
+}
+@keyframes rotate {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0); }
+}
+
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+  position: fixed;
+  right: 0;
+  top: 0;
+  min-width: 102%;
+  /* min-height: 100%; */
+  z-index: -2;
+}
+
+ 
+ 
+
+</style>
+
+<section class="overflow-hidden">
+
+  <!-- The video -->
+<video autoplay muted loop id="myVideo">
+  <source src="./src/assets/images/test.mp4" type="video/mp4">
+</video>
+
+
+
+<!-- <div id="container">
+<div id="circle">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="300px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
+    <defs>
+        <path id="circlePath" d=" M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 "/>
+    </defs>
+    <circle cx="150" cy="100" r="75" fill="none"/>
+    <g>
+        <use xlink:href="#circlePath" fill="none"/>
+        <text fill="#000">
+            <textPath xlink:href="#circlePath">Text rotating around a circle path with SVG!</textPath>
+        </text>
+    </g>
+</svg>
+</div>
+</div> -->
+
+
+    <div class="mx-auto max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8  my-10">
+    
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
+
+               <div class="">
+                <h2 class="text-5xl font-bold sm:text-5xl uppercase">Zonne-energie redt de mensen en de planeet!</h2>
+
+           
+            </div>
+            <div class="relative h-64 overflow-hidden  sm:h-80 lg:order-last lg:h-full">
+                   <p class="mt-4 text-gray-600">
+                    Gedaan met hoge energierekeningen en samen pakken we de klimaatcrisis aan. Maak je klaar voor de verplichte omschakeling naar zonne-energie en laat u begeleiden door PV Energy. 
+                </p>
+
+                <a
+                    href="#"
+                    class="mt-8 inline-block  bg-lime-500 px-12 py-3 text-sm font-medium text-white transition hover:bg-lime-600 focus:outline-none focus:ring focus:ring-lime-800"
+                >
+                    Ontdek onze promoties
+                </a>
+            </div>
+
+         
+        </div>
+    </div>
+<div class="mx-auto max-w-screen-xl " style="">
+     
+<div class="masonry-container    relative w-4/5 " style=" position:relative;  margin-left: auto; 
+margin-right: 0;">
+       <div id="circle" style="position:absolute; z-index:1000; right:150px">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="300px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
+    <defs>
+        <path id="circlePath" d=" M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 "/>
+    </defs>
+    <circle cx="150" cy="100" r="75" fill="none"/>
+    <g>
+        <use xlink:href="#circlePath" fill="none"/>
+        <text fill="#000">
+            <textPath xlink:href="#circlePath" class="uppercase">We are a RESCert Certified company </textPath>
+        </text>
+    </g>
+</svg>
+</div>
+  <div class="item small"><img src="https://unsplash.it/900/900/?random" /></div>
+  <div class="item large"><img src="https://unsplash.it/850/850/?random" /></div>
+  <div class="item medium2"><img src="https://unsplash.it/600/500/?random" /></div>
+  <div class="item small2"><img src="https://unsplash.it/700/500/?random" /></div>
+</div>
+</div>
+
+
+
+</section>
