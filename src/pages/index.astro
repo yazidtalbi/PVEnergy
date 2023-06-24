@@ -21,6 +21,7 @@ import Partners from '~/components/widgets/Partners.astro';
 import Steps3 from '~/components/widgets/Steps3.astro';
 import Stats2 from '~/components/widgets/Stats2.astro';
 // import Testimonials from '~/components/widgets/Testimonials.astro';
+import Merge from '~/components/widgets/Merge.astro'; 
 import Contact from '~/components/widgets/Contact.astro'; 
 import Testimonials from '~/components/widgets/Testimonials.astro';
 
@@ -32,6 +33,7 @@ const meta = {
   dontUseTitleTemplate: true,
 };
 ---
+
 
 <Layout {meta}>
   <!-- Hero Widget ******************* -->
@@ -114,8 +116,9 @@ const meta = {
 <center><About/></center>
 <center><Services/></center>
 <center><Gallery/></center>
-<Partners/>
-<Steps3/>
+<Merge/>
+<!-- <Partners/>
+<Steps3/> -->
 <Testimonials/>
   <!-- <Content
     highlight="Inside template"

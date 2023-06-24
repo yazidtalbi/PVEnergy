@@ -10,13 +10,17 @@
   position: relative;
   height: 300px;
   overflow: hidden;
+    margin-left:20px;
+    margin-bottom:20px;
 }
 .masonry-container .item:after {
   content: " ";
   position: absolute;
   width: 100%;
   height: 100%;
-  border: 10px solid #fff;
+  margin-left:10px;
+  /* border-left: 10px solid #fff;
+  border-bottom: 10px solid #fff; */
   z-index: 2;
 }
 .masonry-container .item.small {
@@ -98,12 +102,13 @@
 
 /* Style the video: 100% width and height to cover the entire window */
 #myVideo {
-  position: fixed;
-  right: 0;
-  top: 0;
-  min-width: 102%;
-  /* min-height: 100%; */
-  z-index: -2;
+position: fixed;
+    /* right: 0; */
+    opacity: 60%;
+    top: 0;
+    /* height: 100%; */
+    min-width: 102%;
+    z-index: -2;
 }
 
  
@@ -137,24 +142,113 @@
 </div>
 </div> -->
 
+<!DOCTYPE html>
+<html lang="en">
 
-    <div class="mx-auto max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8  my-10">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rotating Circular Text</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      width: 100vw;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+
+      display: grid;
+    }
+
+    .text {
+      font-weight: 600;
+      letter-spacing: 1.7px;
+      text-transform: uppercase;
+      
+      font-size: 17px;
+      fill: #111;
+      /* text-shadow: 2px 0px #ccc; */
+    }
+
+    #rotatingText {
+      animation-name: rotate-circle;
+      animation-duration: 10s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes rotate-circle {
+      to {
+        transform: rotate(1turn);
+      }
+    }
+
+    .main {
+      display: inline-grid;
+      align-items: center;
+      justify-items: center;
+    }
+
+    .main img {
+      position: absolute;
+    }
+
+    .main img {
+      position: absolute;
+      animation-name: rotate-circle;
+      animation-direction: reverse;
+      animation-duration: 5s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+ 
+    }
+  </style>
+</head>
+
+  <div class="main  " style="display:none">
+    <img src="https://svgsilh.com/svg/2427335.svg" width="20" height="20">
+    <svg id="rotatingText" viewBox="0 0 200 200" width="200" height="200">
+      <defs>
+        <path id="circle" d="M 100, 100
+                m -75, 0
+                a 75, 75 0 1, 0 150, 0
+                a 75, 75 0 1, 0 -150, 0
+                ">
+        </path>
+      </defs>
+      <text width="400">
+        <textPath alignment-baseline="top" xlink:href="#circle" class="text">
+         xxxxx
+        </textPath>
+      </text>
+    </svg>
+  </div>
+</html>
+
+
+    <div class="mx-auto max-w-screen-xl px-4  pb-8 sm:px-6  lg:px-8  my-10">
     
-        <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16 py-12" >
 
-               <div class="">
-                <h2 class="text-5xl font-bold sm:text-5xl uppercase">Zonne-energie redt de mensen en de planeet!</h2>
+               <div class="mt-8">
+                <!-- <h2 class="text-5xl font-bold sm:text-5xl uppercase">Zonne-energie redt de mensen en de planeet!</h2> -->
+                <h1 class="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl "><span class="text-transparent bg-clip-text bg-gradient-to-r to-lime-700 from-lime-500">Zonne-energie</span><br/> redt de  <span class="underline underline-offset-3 decoration-8 decoration-lime-500 dark:decoration-lime-700">mensen</span> en de  <span class="underline underline-offset-3 decoration-8 decoration-lime-500 dark:decoration-lime-600">planeet</span>!</h1>
 
            
             </div>
-            <div class="relative h-64 overflow-hidden  sm:h-80 lg:order-last lg:h-full">
-                   <p class="mt-4 text-gray-600">
-                    Gedaan met hoge energierekeningen en samen pakken we de klimaatcrisis aan. Maak je klaar voor de verplichte omschakeling naar zonne-energie en laat u begeleiden door PV Energy. 
+            <div class="relative  ">
+                   <p class="mt-4 text-gray-600 text-xl leading-8">
+                    Gedaan met hoge energierekeningen en samen pakken we de klimaatcrisis aan. <br/><br/>Maak je klaar voor de verplichte omschakeling naar zonne-energie en laat u begeleiden door PV Energy. 
                 </p>
 
                 <a
                     href="#"
-                    class="mt-8 inline-block  bg-lime-500 px-12 py-3 text-sm font-medium text-white transition hover:bg-lime-600 focus:outline-none focus:ring focus:ring-lime-800"
+                    class="mt-8 inline-block  bg-lime-500 px-12 py-3 text-sm font-medium text-white transition hover:bg-lime-600 focus:outline-none focus:ring focus:ring-lime-800 border-l-8 border-lime-700  border border-y-0 border-r-0 " 
                 >
                     Ontdek onze promoties
                 </a>
@@ -163,28 +257,36 @@
          
         </div>
     </div>
-<div class="mx-auto max-w-screen-xl " style="">
-     
-<div class="masonry-container    relative w-4/5 " style=" position:relative;  margin-left: auto; 
-margin-right: 0;">
-       <div id="circle" style="position:absolute; z-index:1000; right:150px">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="300px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
-    <defs>
-        <path id="circlePath" d=" M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 "/>
-    </defs>
-    <circle cx="150" cy="100" r="75" fill="none"/>
-    <g>
-        <use xlink:href="#circlePath" fill="none"/>
-        <text fill="#000">
-            <textPath xlink:href="#circlePath" class="uppercase">We are a RESCert Certified company </textPath>
-        </text>
-    </g>
-</svg>
+<div class="relative" style="">
+     <div id="circle" class="absolute left-0 top-0 z-10" style=" ">
+  <div class="main" style="margin-left: 200px;">
+    <img src="https://svgsilh.com/svg/2427335.svg" width="20" height="20">
+    <svg id="rotatingText" viewBox="0 0 200 200" width="200" height="200">
+      <defs>
+        <path id="circle" d="M 100, 100
+                m -75, 0
+                a 75, 75 0 1, 0 150, 0
+                a 75, 75 0 1, 0 -150, 0
+                ">
+        </path>
+      </defs>
+      <text width="400">
+        <textPath alignment-baseline="top" xlink:href="#circle" class="text text-orange-400">
+          We are a rescert certified company 
+        </textPath>
+      </text>
+    </svg>
+  </div>
 </div>
-  <div class="item small"><img src="https://unsplash.it/900/900/?random" /></div>
-  <div class="item large"><img src="https://unsplash.it/850/850/?random" /></div>
-  <div class="item medium2"><img src="https://unsplash.it/600/500/?random" /></div>
-  <div class="item small2"><img src="https://unsplash.it/700/500/?random" /></div>
+<div class="masonry-container    relative   " style=" position:relative;  margin-left: 280px;
+margin-right: 0;">
+       
+  <div class="item small"><video autoplay muted loop id="msyVideo" style="position:absolute;bottom:-150px">
+  <source src="./src/assets/images/stoc2k.mp4" type="video/mp4">
+</video></div>
+  <div class="item large"><img src="../src/assets/images/pv-welcome.jpg" /></div>
+  <!-- <div class="item medium2"><img src="https://unsplash.it/600/500/?random" /></div>
+  <div class="item small2"><img src="https://unsplash.it/700/500/?random" /></div> -->
 </div>
 </div>
 
